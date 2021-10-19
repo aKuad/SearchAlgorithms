@@ -6,7 +6,7 @@
  * Published with CC0 license
  */
 
-/* Headers incliding */
+/* Header incliding */
 #include "NodeLiner.h"
 
 /* Constructor */
@@ -35,4 +35,22 @@ NodeLiner* NodeLiner::makeNextNode(int id, std::string value) {
     return this->nextNode;
   }
   return NULL;
+}
+
+/* Method - Making new node to end of liner structure */
+/*   return: created new node pointer */
+std::string NodeLiner::searchFromId(int id) {
+  if(this->id != id) {
+    // When id is not same
+    if(this->nextNode != NULL) {
+      // When next node is exist
+      return this->nextNode->searchFromId(id);
+    } else {
+      // When not
+      return "Not-found";
+    }
+  } else {
+    // When id is same
+    return this->value;
+  }
 }
