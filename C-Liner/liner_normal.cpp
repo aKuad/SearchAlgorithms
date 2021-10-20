@@ -75,5 +75,8 @@ int main(int argc, char *argv[]) {
   }
 
   // Quit
+  if(nodeRoot != NULL) {
+    delete nodeRoot;
+  }
   return 0;
 }
