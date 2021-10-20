@@ -1,6 +1,6 @@
 # coding: UTF-8
 #
-# MakeData.py
+# data_make.py
 #
 # Author: aKuad
 #
