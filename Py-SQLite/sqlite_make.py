@@ -1,6 +1,6 @@
 # coding: UTF-8
 #
-# MakeDB.py
+# sqlite_make.py
 #
 # Author: aKuad
 #
