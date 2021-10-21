@@ -48,10 +48,12 @@ int main() {
   sqlite3_exec(db, query, NULL, NULL, &err);
   //// Data inserting
   ifs.open(NAME_TX);
+  sqlite3_exec(db, "begin", NULL, NULL, &err);
   while(ifs >> id >> value) {
     sprintf(query, "insert into %s values (%d, '%s');", NAME_TB, id, value);
     sqlite3_exec(db, query, NULL, NULL, &err);
   }
+  sqlite3_exec(db, "commit", NULL, NULL, &err);
   ifs.close();
   //// Timer stop
   t_ed = system_clock::now();
