@@ -52,3 +52,30 @@ NodeBinTree* NodeBinTree::makeNewNode(int id, std::string value) {
     return NULL;
   }
 }
+
+/* Method - Search value from id at binary tree structure */
+/*   return: found value or "Not-found" */
+std::string NodeBinTree::searchFromId(int id) {
+  if(this->id < id) {
+    // When selected id is higher than current node id
+    if(this->node_high != NULL) {
+      // When high node is exist
+      return this->node_high->searchFromId(id);
+    } else {
+      // When not
+      return "Not-found";
+    }
+  } else if(this->id > id) {
+    // When selected id is lower than current node id
+    if(this->node_low != NULL) {
+      // When low node is exist
+      return this->node_low->searchFromId(id);
+    } else {
+      // When not
+      return "Not-found";
+    }
+  } else {
+    // When id is same
+    return this->value;
+  }
+}

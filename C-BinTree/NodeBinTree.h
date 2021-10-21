@@ -30,4 +30,5 @@ class NodeBinTree {
 
     // Methods
     NodeBinTree* makeNewNode(int id, std::string value);
+    std::string searchFromId(int id);
 };
