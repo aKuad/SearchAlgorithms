@@ -37,8 +37,8 @@ NodeLiner* NodeLiner::makeNextNode(int id, std::string value) {
   return NULL;
 }
 
-/* Method - Making new node to end of liner structure */
-/*   return: created new node pointer */
+/* Method - Search value from id at liner structure */
+/*   return: found value or "Not-found" */
 std::string NodeLiner::searchFromId(int id) {
   if(this->id != id) {
     // When id is not same
