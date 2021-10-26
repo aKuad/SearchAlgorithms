@@ -1,0 +1,10 @@
+# .gitignore
+#
+# Author: aKuad
+#
+# Published with CC0 license
+#
+
+bintree_normal
+bintree_hash
+*.o
