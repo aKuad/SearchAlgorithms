@@ -14,7 +14,7 @@ OBJS = $(SRCS:.cpp=.o)
 # Build config
 CXX = g++
 CXXFLAGS = -Wall -O2
-RM = -rm
+RM = -rm -f
 
 # Target - Build all
 all: $(EXE_NRM) $(EXE_HAS)
