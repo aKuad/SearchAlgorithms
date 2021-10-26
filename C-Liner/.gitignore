@@ -1,3 +1,10 @@
+# .gitignore
+#
+# Author: aKuad
+#
+# Published with CC0 license
+#
+
 liner_normal
 liner_hash
 *.o
