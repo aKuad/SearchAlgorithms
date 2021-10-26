@@ -64,5 +64,8 @@ int main(int argc, char* argv[]) {
   }
 
   // Quit
+  if(nodeTop != NULL) {
+    delete nodeTop;
+  }
   return 0;
 }
