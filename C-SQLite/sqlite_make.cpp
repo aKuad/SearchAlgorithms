@@ -35,7 +35,10 @@ int main() {
 
   // Database making
   //// Database connect
-  system(((string)"echo -n > " + NAME_DB).c_str()); // Exist file removing
+  if(system(((string)"echo -n > " + NAME_DB).c_str())) { // Exist file removing
+    cerr << "Database clear failed." << endl;
+    exit(EXIT_FAILURE);
+  }
   res = sqlite3_open_v2(NAME_DB, &db, SQLITE_OPEN_CREATE | SQLITE_OPEN_READWRITE, NULL);
   if(res != SQLITE_OK) {
     fprintf(stderr, "Failed to open a database.");
