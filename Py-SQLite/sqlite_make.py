@@ -11,12 +11,21 @@
 from sqlite3 import connect
 from subprocess import call
 from time import perf_counter
+from sys import argv, stderr, exit
+
+
+# Argument checking
+if len(argv) != 3:
+  print("Invalid arguments.", file=stderr)
+  print("  Useage:", file=stderr)
+  print("    %s <Input data file> <Output data file>" % argv[0], file=stderr)
+  exit(1)
 
 
 # Parameters settings
-NAME_DB = "data.db"
+NAME_DB = argv[2]
 NAME_TB = "data"
-NAME_TX = "../data.txt"
+NAME_TX = argv[1]
 
 
 # Database making
