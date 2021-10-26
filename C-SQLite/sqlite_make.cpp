@@ -17,13 +17,13 @@ using namespace std::chrono;
 
 
 /* Parameters settings */
-#define NAME_DB "data.db"
+#define NAME_DB argv[2]
 #define NAME_TB "data"
-#define NAME_TX "../data.txt"
+#define NAME_TX argv[1]
 
 
 /* main function */
-int main() {
+int main(int argc, char *argv[]) {
   // Variables declarations
   sqlite3 *db;
   fstream ifs;
@@ -33,9 +33,18 @@ int main() {
   char value[8];
   char query[64];
 
+  // Argument checking
+  if(argc != 3) {
+    cerr << "Invalid arguments." << endl;
+    cerr << "  Useage:" << endl;
+    cerr << "    " << argv[0] << " <Input data file> <Output data file>" << endl;
+    exit(EXIT_FAILURE);
+  }
+
   // Database making
   //// Database connect
-  if(system(((string)"echo -n > " + NAME_DB).c_str())) { // Exist file removing
+  sprintf(query, "echo -n > %s", NAME_DB);
+  if(system(query)) { // Exist file removing
     cerr << "Database clear failed." << endl;
     exit(EXIT_FAILURE);
   }
