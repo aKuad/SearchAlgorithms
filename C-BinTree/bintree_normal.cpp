@@ -27,7 +27,9 @@ int main(int argc, char* argv[]) {
 
   // Argument checking
   if(argc < 3) {
-    cerr << "Invalid argument" << endl;
+    cerr << "Invalid arguments." << endl;
+    cerr << "  Useage:" << endl;
+    cerr << "    " << argv[0] << " <Input data file> <Search id 1> <Search id 2> ..." << endl;
     exit(EXIT_FAILURE);
   }
 
