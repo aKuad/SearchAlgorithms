@@ -19,4 +19,4 @@ with open(DATA_NAME, 'w') as f:
   nums = list(range(DATA_COUNT))
 
   for i in range(DATA_COUNT):
-    f.write("%d %x\n" % (nums.pop(randint(0, len(nums) - 1)), randint(0x000000, 0xffffff)))
+    f.write("%d %x\n" % (nums.pop(randint(0, len(nums) - 1)), randint(0x100000, 0xffffff)))
