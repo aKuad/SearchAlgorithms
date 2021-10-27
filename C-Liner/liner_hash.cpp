@@ -12,11 +12,14 @@
 #include <chrono>
 #include "NodeLiner.h"
 
-#define HASH_SIZE 100
-//#define HASH_FUNC i%100
-
 using namespace std;
 using namespace std::chrono;
+
+
+/* Parameters settings */
+#define HASH_SIZE 100
+#define HASH_FUNC id % HASH_SIZE
+#define NAME_DT argv[1]
 
 
 /* main function */
@@ -38,12 +41,12 @@ int main(int argc, char *argv[]) {
 
   // Data reading
   //// File open
-  ifs.open(argv[1]);
+  ifs.open(NAME_DT);
   //// Timer start
   t_st = system_clock::now();
   //// Other node make
   while(ifs >> id >> value) {
-    hash = id % HASH_SIZE;
+    hash = HASH_FUNC;
     if(nodeRoot[hash] != NULL) {
       nodeNext[hash] = nodeNext[hash]->makeNextNode(id, value);
     } else {
@@ -65,7 +68,7 @@ int main(int argc, char *argv[]) {
     // Data searching
     //cout << argv[i] << " " << nodeRoot->searchFromId(atoi(argv[i])) << endl;
     id = atoi(argv[i]);
-    hash = id % HASH_SIZE;
+    hash = HASH_FUNC;
     curNode = nodeRoot[hash];
     while((curNode->getId() != id) && (curNode->getNextNode() != NULL)) {
       curNode = curNode->getNextNode();
