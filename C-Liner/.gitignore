@@ -5,6 +5,6 @@
 # Published with CC0 license
 #
 
-*.db
-*.txt
-.vscode
+liner_normal
+liner_hash
+*.o

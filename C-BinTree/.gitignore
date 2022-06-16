@@ -5,6 +5,6 @@
 # Published with CC0 license
 #
 
-*.db
-*.txt
-.vscode
+bintree_normal
+bintree_hash
+*.o

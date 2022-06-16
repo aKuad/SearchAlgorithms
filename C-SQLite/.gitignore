@@ -5,6 +5,5 @@
 # Published with CC0 license
 #
 
-*.db
-*.txt
-.vscode
+sqlite_make
+*.o
